@@ -144,7 +144,8 @@ class Game(object):
 
         self.camera.position = (look_at - offset *
                                 np.array([-np.sin(self.player.model.yaw),
-                                          np.cos(self.player.model.yaw), 0.0]))
+                                           np.cos(self.player.model.yaw),
+                                           0.0]))
 
         self.camera.look_at_point(look_at)
 
