@@ -355,8 +355,8 @@
 </v>
 <v t="karstenw.20230817121704.1" a="E"><vh>@clean src/game.py</vh>
 <v t="karstenw.20230817121726.1"><vh>Declarations</vh></v>
-<v t="karstenw.20230817121726.2" a="E"><vh>class Game</vh>
-<v t="karstenw.20230817121726.3" a="E"><vh>__init__</vh>
+<v t="karstenw.20230817121726.2"><vh>class Game</vh>
+<v t="karstenw.20230817121726.3"><vh>__init__</vh>
 <v t="karstenw.20230817194702.1"><vh>&lt;&lt; world map &gt;&gt;</vh></v>
 <v t="karstenw.20230817194741.1"><vh>&lt;&lt; fonts &gt;&gt;</vh></v>
 <v t="karstenw.20230817194824.1"><vh>&lt;&lt; load game objects &gt;&gt;</vh></v>
@@ -3504,7 +3504,6 @@ def friction(self, val):
 </t>
 <t tx="karstenw.20230817121941.1">import numpy as np
 
-
 </t>
 <t tx="karstenw.20230817121942.1">class LightSource(object):
     """
@@ -3729,7 +3728,12 @@ def linear_distance(self, val):
     colours = np.where(colours &lt; 0, 0, colours)
     colours[:, 3] = 255
     if culling:
-        colours[np.where(scatter &lt; 0)] = 0
+        try:
+            colours[np.where(scatter &lt; 0)] = 0
+        except:
+            pass
+    
+    
 
     return colours
 </t>
