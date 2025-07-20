@@ -1,5 +1,4 @@
 import numpy as np
-import pdb
 
 class LightSource(object):
     """
@@ -212,7 +211,7 @@ class Shader(object):
                                           (self.linear_distance +
                                            self.cutoff_distance - dists)
                                           / (self.linear_distance)))
-        #pdb.set_trace()
+
         # Renormalise to allowed colour values:
         colours = np.where(colours > 255, 255, colours)
         colours = np.where(colours < 0, 0, colours)
